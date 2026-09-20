@@ -3,7 +3,7 @@ from resume_enhancer.config import Config
 from resume_enhancer.schemas.candidate_profile import CandidateProfile
 from resume_enhancer.schemas.job_requirements import JobRequirements
 from resume_enhancer.schemas.gap_analysis import GapAnalysis
-from resume_enhancer.schemas.enhanced_resume import EnhancedResume
+from resume_enhancer.schemas.enhanced_resume import EnhancedExperience, EnhancedResume
 
 ENHANCER_POLICY = """You rewrite resume content to better align with a target job description.
 
@@ -30,25 +30,25 @@ ABSOLUTE RULES — violating these makes the output actively harmful, not just l
   include it with its original achievements lightly rephrased for clarity, never dropped.
 """
 
-def enhance_resume(
-    profile: CandidateProfile,
-    requirements: JobRequirements,
-    gap: GapAnalysis,
-) -> EnhancedResume:
-    response = client.beta.chat.completions.parse(
-        model=Config.ENHANCER_MODEL,
-        temperature=0,
-        messages=[
-            {"role": "system", "content": ENHANCER_POLICY},
-            {"role": "user", "content": (
-                f"Candidate Profile:\n{profile.model_dump_json(indent=2)}\n\n"
-                f"Job Requirements:\n{requirements.model_dump_json(indent=2)}\n\n"
-                f"Gap Analysis:\n{gap.model_dump_json(indent=2)}"
-            )},
-        ],
-        response_format=EnhancedResume,
-    )
-    return response.choices[0].message.parsed
+#def enhance_resume(
+#    profile: CandidateProfile,
+#    requirements: JobRequirements,
+#    gap: GapAnalysis,
+#) -> EnhancedResume:
+#    response = client.beta.chat.completions.parse(
+#        model=Config.ENHANCER_MODEL,
+#        temperature=0,
+#        messages=[
+#            {"role": "system", "content": ENHANCER_POLICY},
+#            {"role": "user", "content": (
+#                f"Candidate Profile:\n{profile.model_dump_json(indent=2)}\n\n"
+#                f"Job Requirements:\n{requirements.model_dump_json(indent=2)}\n\n"
+#                f"Gap Analysis:\n{gap.model_dump_json(indent=2)}"
+#            )},
+#        ],
+#        response_format=EnhancedResume,
+#    )
+#    return response.choices[0].message.parsed
 
 
 def verify_no_missing_skills_leaked(enhanced: EnhancedResume, gap: GapAnalysis) -> list[str]:
@@ -70,3 +70,60 @@ def verify_all_experiences_present(enhanced: EnhancedResume, profile: CandidateP
     enhanced_titles = {(e.title, e.duration) for e in enhanced.experiences}
     missing = original_titles - enhanced_titles
     return [f"{title} ({duration})" for title, duration in missing]
+
+
+
+def enhance_experience(
+    experience,  # a single Experience from profile.experiences
+    requirements: JobRequirements,
+    gap: GapAnalysis,
+) -> EnhancedExperience:
+    response = client.beta.chat.completions.parse(
+        model=Config.ENHANCER_MODEL,
+        temperature=0,
+        messages=[
+            {"role": "system", "content": ENHANCER_POLICY},
+            {"role": "user", "content": (
+                f"Job Requirements:\n{requirements.model_dump_json(indent=2)}\n\n"
+                f"Gap Analysis:\n{gap.model_dump_json(indent=2)}\n\n"
+                f"Rewrite ONLY this one experience:\n{experience.model_dump_json(indent=2)}"
+            )},
+        ],
+        response_format=EnhancedExperience,
+    )
+    return response.choices[0].message.parsed
+
+
+def enhance_resume(
+    profile: CandidateProfile,
+    requirements: JobRequirements,
+    gap: GapAnalysis,
+) -> EnhancedResume:
+    # Summary and skills_to_highlight still make sense as ONE call — they're
+    # holistic, cross-experience judgments, not per-role
+    summary_response = client.beta.chat.completions.parse(
+        model=Config.ENHANCER_MODEL,
+        temperature=0,
+        messages=[
+            {"role": "system", "content": ENHANCER_POLICY},
+            {"role": "user", "content": (
+                f"Candidate Profile:\n{profile.model_dump_json(indent=2)}\n\n"
+                f"Job Requirements:\n{requirements.model_dump_json(indent=2)}\n\n"
+                f"Gap Analysis:\n{gap.model_dump_json(indent=2)}\n\n"
+                "Produce ONLY tailored_summary, skills_to_highlight, and honest_gaps_note."
+            )},
+        ],
+        response_format=EnhancedResume,   # reused schema; experiences left empty here
+    )
+    summary_parsed = summary_response.choices[0].message.parsed
+
+    enhanced_experiences = [
+        enhance_experience(exp, requirements, gap) for exp in profile.experiences
+    ]
+
+    return EnhancedResume(
+        tailored_summary=summary_parsed.tailored_summary,
+        experiences=enhanced_experiences,
+        skills_to_highlight=summary_parsed.skills_to_highlight,
+        honest_gaps_note=summary_parsed.honest_gaps_note,
+    )
