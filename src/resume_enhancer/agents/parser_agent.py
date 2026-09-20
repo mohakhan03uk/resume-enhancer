@@ -21,6 +21,7 @@ Rules:
 def parse_resume(resume_text: str) -> CandidateProfile:
     response = client.beta.chat.completions.parse(
         model=Config.PARSER_MODEL,
+        temperature=0,
         messages=[
             {"role": "system", "content": PARSER_POLICY},
             {"role": "user", "content": f"Resume:\n{resume_text}"},
