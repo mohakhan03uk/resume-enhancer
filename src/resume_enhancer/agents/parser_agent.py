@@ -11,6 +11,11 @@ Rules:
   if genuinely unclear — use 0 if you cannot determine it.
 - achievements should be extracted close to the original wording, not rewritten or
   embellished at this stage — this is extraction, not enhancement.
+- For skills: if the resume already groups skills under headings (e.g. "Languages:",
+  "Cloud and Platforms:"), preserve those exact category names. If skills appear
+  ungrouped, infer reasonable, standard categories (e.g. "Languages", "Cloud",
+  "Frameworks") — but never invent a skill that isn't listed, only categorize
+  what's actually there.
 """
 
 def parse_resume(resume_text: str) -> CandidateProfile:

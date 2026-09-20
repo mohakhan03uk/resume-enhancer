@@ -1,0 +1,70 @@
+About the job
+ABOUT US:
+
+LSEG (London Stock Exchange Group) is more than a diversified global financial markets infrastructure and data business. We are dedicated, open-access partners with a dedication to excellence in delivering the services our customers expect from us. With extensive experience, deep knowledge and worldwide presence across financial markets, we enable businesses and economies around the world to fund innovation, manage risk and create jobs. It’s how we’ve contributed to supporting the financial stability and growth of communities and economies globally for more than 300 years. Through a comprehensive suite of trusted financial market infrastructure services – and our open-access model – we provide the flexibility, stability and trust that enable our customers to pursue their ambitions with confidence and clarity.
+
+LSEG is headquartered in the United Kingdom, with significant operations in 70 countries across EMEA, North America, Latin America and Asia Pacific. We employ 25,000 people globally, more than half located in Asia Pacific. LSEG’s ticker symbol is LSEG.
+
+OUR PEOPLE:
+
+People are at the heart of what we do and drive the success of our business. Our culture of connecting, creating opportunity and delivering excellence shape how we think, how we do things and how we help our people fulfil their potential. We embrace diversity and actively seek to attract individuals with unique backgrounds and perspectives. We break down barriers and encourage teamwork, enabling innovation and rapid development of solutions that make a difference. Our workplace generates an enriching and rewarding experience for our people and customers alike. Our vision is to build an inclusive culture in which everyone feels encouraged to fulfil their potential.
+
+We know that real personal growth cannot be achieved by simply climbing a career ladder – which is why we encourage and enable a wealth of avenues and interesting opportunities for everyone to broaden and deepen their skills and expertise. As a global organisation spanning 70 countries and one rooted in a culture of growth, opportunity, diversity and innovation, LSEG is a place where everyone can grow, develop and fulfil your potential with meaningful careers.
+
+ROLE SUMMARY:
+
+This is an individual contributor role responsible for the design, development, and delivery of high‑quality software solutions using C++ and Java within a defined product, platform, or client solution area. The role emphasizes hands‑on engineering, strong ownership of medium‑to‑large technical components, and adherence to established architectural and engineering standards.
+
+The engineer collaborates closely with senior engineers, architects, product managers, and delivery teams to implement technical changes that improve business and client outcomes. While not an architect or people manager, the role requires strong technical judgment, mentoring of junior engineers, and meaningful contribution to solution design and delivery excellence.
+
+WHAT YOU'LL BE DOING:
+
+Design, develop, and maintain C++ and Java applications and services, delivering robust, performant, and maintainable solutions.
+Implement technical changes and enhancements that improve platform stability, scalability, and client outcomes.
+Collaborate with product owners, business partners, and senior engineers to translate functional and non‑functional requirements into effective technical designs.
+Build solution‑level extensions and component enhancements in line with LSEG architectural principles, coding standards, and approved design patterns.
+Escalate architectural concerns, complex design decisions, or material technical risks to senior engineers or architects as appropriate.
+Take technical ownership of one or more key components, services, or subsystems, ensuring high code quality, strong test coverage, and operational readiness.
+Contribute to solution and component design, ensuring codebases are maintainable, extensible, and well‑documented across both C++ and Java stacks.
+Support full lifecycle delivery, including estimation, design, development, testing, release, and production support.
+Diagnose and resolve complex issues across development, QA, and production environments, including performance and concurrency‑related issues.
+Participate actively in code reviews, design discussions, and technical forums, contributing to continuous improvement.
+Provide technical guidance and mentoring to junior engineers, particularly in C++/Java best practices and design patterns.
+Ensure adherence to SDLC standards, engineering controls, and quality metrics, contributing to healthy team‑level engineering baselines.
+
+WHAT YOU'LL BRING:
+
+Bachelor’s degree in Computer Science, Engineering, or equivalent practical experience.
+Strong, hands‑on software engineering experience in C++ and Java, with a proven track record of designing and delivering medium‑to‑large scale systems.
+Industry experience, operating at a senior engineer or technical‑lead‑equivalent level.
+Solid understanding of object‑oriented design, data structures, algorithms, concurrency, memory management, and system integration.
+Experience building and supporting distributed systems, including messaging, APIs, and inter‑service communication.
+Familiarity with Linux environments, build tools, version control systems, and automated testing frameworks.
+Experience with modern engineering practices such as CI/CD, performance tuning, and observability.
+Exposure to cloud platforms and open‑source technologies, and integrating them into enterprise systems.
+Strong understanding of the full software development lifecycle (SDLC) and associated tools and processes.
+Strong communication and collaboration skills, with the ability to influence technical outcomes without formal authority.
+
+Career Stage:
+
+Senior Associate
+
+London Stock Exchange Group (LSEG) Information:
+
+Join us and be part of a team that values innovation, quality, and continuous improvement. If you're ready to take your career to the next level and make a significant impact, we'd love to hear from you.
+
+LSEG is a leading global financial markets infrastructure and data provider. Our purpose is driving financial stability, empowering economies and enabling customers to create sustainable growth.
+
+Our purpose is the foundation on which our culture is built. Our values of Integrity, Partnership, Excellence and Change underpin our purpose and set the standard for everything we do, every day. They go to the heart of who we are and guide our decision making and everyday actions.
+
+Working with us means that you will be part of a dynamic organisation of 25,000 people across 65 countries. However, we will value your individuality and enable you to bring your true self to work so you can help enrich our diverse workforce.
+
+We are proud to be an equal opportunities employer. This means that we do not discriminate on the basis of anyone’s race, religion, colour, national origin, gender, sexual orientation, gender identity, gender expression, age, marital status, veteran status, pregnancy or disability, or any other basis protected under applicable law. Conforming with applicable law, we can reasonably accommodate applicants' and employees' religious practices and beliefs, as well as mental health or physical disability needs.
+
+You will be part of a collaborative and creative culture where we encourage new ideas. We are committed to sustainability across our global business and we are proud to partner with our customers to help them meet their sustainability objectives. Our charity, the LSEG Foundation provides charitable grants to community groups that help people access economic opportunities and build a secure future with financial independence. Colleagues can get involved through fundraising and volunteering.
+
+LSEG offers a range of tailored benefits and support, including healthcare, retirement planning, paid volunteering days and wellbeing initiatives.
+
+Please take a moment to read this privacy notice carefully, as it describes what personal information London Stock Exchange Group (LSEG) (we) may hold about you, what it’s used for, and how it’s obtained, your rights and how to contact us as a data subject.
+
+If you are submitting as a Recruitment Agency Partner, it is essential and your responsibility to ensure that candidates applying to LSEG are aware of this privacy notice.
